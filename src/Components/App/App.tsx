@@ -1,49 +1,62 @@
-import React, { Component } from 'react';
-import { AppHeader } from '../AppHeader/index';
-import { Container } from '../../blocks/Container/Container';
-import { Main } from '../Main/index';
-import { Switch, Route } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
-import { Auth } from '../Auth';
-import { Reg } from '../Reg';
-import { Restore } from '../Restore';
-import {Count} from '../Count/index';
-import { NewCount } from '../NewCount/index';
-import { Tasks } from '../Tasks';
-import { NewTask } from '../NewTask';
-import { CurrentTask } from '../CurrentTask';
-import { Partners } from '../Partners';
-import { NewPartner } from '../NewPartner';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { applyMiddleware, combineReducers, createStore, Middleware } from "redux";
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { combineEpics, createEpicMiddleware, EpicMiddleware } from 'redux-observable';
+import {initializeCurrentLocation, State as RouterState} from 'redux-little-router';
+import createBrowserHistory from 'history/createBrowserHistory';
 
+import { Fragment, RouterActions } from 'redux-little-router';
 
-const compWithHeader:Function = (Component:any) => (props:any) => {
-  return(
-    <>
-      <AppHeader/>
-      <div className="container container_comp_wrapper">
-        <Component {...props}></Component>
-      </div>
-    </>
-    )
-}
+import { enhancer, middleware, routesMiddleware, reducer as router } from './router';
+import { MainAction } from "../Main/action";
+import { MainContainer } from "../Main/MainContainer";
+
+export type Action = RouterActions | MainAction;
+export interface EpicDeps {/* nothing */}
+export interface State extends RouterState {/* nothing */}
+
+const createMiddleware = (epicMiddleware: EpicMiddleware<Action, Action, State, EpicDeps>) =>
+    applyMiddleware(middleware, epicMiddleware, routesMiddleware);
 
 export const App: React.FC = () => {
-  return(
-    <>
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" component={compWithHeader(Main)} exact/>
-        <Route path="/auth/login" component={Auth} exact/>
-        <Route path="/auth/reg" component={Reg} exact/>
-        <Route path="/auth/restore" component={Restore} exact/>
-        <Route path="/count/:type" component={compWithHeader(Count)}/>
-        <Route path="/new/count/:type" component={compWithHeader(NewCount)}/>
-        <Route path="/tasks" component={compWithHeader(Tasks)}/>
-        <Route path="/new/tasks" component={compWithHeader(NewTask)}/>
-        <Route path="/current" component={compWithHeader(CurrentTask)}/>
-        <Route path="/partners" component={compWithHeader(Partners)}/>
-        <Route path="/new/partner" component={compWithHeader(NewPartner)}/>
-      </Switch>
-    </BrowserRouter>
-    </>)
-}
+  const history = createBrowserHistory();
+  const composeEnhancers = composeWithDevTools({ serialize: true });
+  const epicMiddleware = createEpicMiddleware<Action, Action, State, EpicDeps>({ dependencies: {} });
+
+  const store = createStore<State, Action, {}, {}>(
+      combineReducers({ router }),
+      composeEnhancers(enhancer, createMiddleware(epicMiddleware))
+  );
+
+  epicMiddleware.run(combineEpics());
+
+  const initialState = store.getState();
+
+  if (initialState && initialState.router) {
+    store.dispatch(initializeCurrentLocation(initialState.router));
+  }
+
+  return (
+    <Provider store={store}>
+      <Fragment forRoute="/">
+        <>
+          <Fragment forRoute="/">
+            <MainContainer message={'Hello'} />
+          </Fragment>
+        </>
+        {/*<Fragment forRoute="/" children={compWithHeader(Main)}/>*/}
+        {/*<Fragment forRoute="/auth/login" children={<Auth />}/>*/}
+        {/*<Fragment forRoute="/auth/reg" children={<Reg />}/>*/}
+        {/*<Fragment forRoute="/auth/restore" children={Restore}/>*/}
+        {/*<Fragment forRoute="/count/:type" children={compWithHeader(Count)}/>*/}
+        {/*<Fragment forRoute="/new/count/:type" children={compWithHeader(NewCount)}/>*/}
+        {/*<Fragment forRoute="/tasks" children={compWithHeader(Tasks)}/>*/}
+        {/*<Fragment forRoute="/new/tasks" children={compWithHeader(NewTask)}/>*/}
+        {/*<Fragment forRoute="/current" children={compWithHeader(CurrentTask)}/>*/}
+        {/*<Fragment forRoute="/partners" children={compWithHeader(Partners)}/>*/}
+        {/*<Fragment forRoute="/new/partner" children={compWithHeader(NewPartner)}/>*/}
+      </Fragment>
+    </Provider>
+  )
+};

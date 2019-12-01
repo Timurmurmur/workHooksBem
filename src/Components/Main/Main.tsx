@@ -10,10 +10,21 @@ interface IState{
     
 }
 
-export class Main extends React.Component<any,IState>{
+export interface MainProps {
+    message: string;
+    message2: string;
+    route: string;
+
+    click: () => void;
+}
+
+export class Main extends React.Component<MainProps, IState>{
     render(){
+        const { click, message, message2, route } = this.props;
+        console.log(message, message2, route);
+
         return(
-            <>
+            <div onClick={click}>
                 <Container comp="main" type="wrapper">
                     <div className="wrapper wrapper_comp_card card_type_task">
                         <div className="card_header">
@@ -395,7 +406,7 @@ export class Main extends React.Component<any,IState>{
                     </div>
                     
                 </Container>
-            </>
+            </div>
         );
     }
 }

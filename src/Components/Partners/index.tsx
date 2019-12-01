@@ -7,9 +7,7 @@ import { Button } from '../../blocks/Button/Button';
 import logo from '../../assets/icons/logo-2.svg';
 
 export class Partners extends React.Component<any,any>{
-
-
-    render(){
+    render() {
         return(
             <>
              <Container comp="compNav" type="container">
