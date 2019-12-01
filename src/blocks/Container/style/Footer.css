@@ -1,0 +1,11 @@
+.footer{
+
+}
+.footer_comp_auth{
+    display: flex;
+    justify-content: space-between;
+}
+.footer_comp_reg span{
+    font-size: 14px;
+    color: rgba(0, 0, 0, .53)
+}

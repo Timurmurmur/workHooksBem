@@ -1,0 +1,11 @@
+.header_comp_auth{
+    margin-bottom: 40px;
+}
+.header_comp_auth .link{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.header_comp_auth .link_comp_auth{
+    margin-right: 20px;
+    padding-bottom: 3px;
+}

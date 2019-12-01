@@ -1,0 +1,19 @@
+.container{
+
+}
+.container_comp_auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+}
+.container.container_comp_wrapper{
+    z-index: 1;
+    position: absolute;
+    top: 120px;
+    left: 115px;
+    width: calc(100vw - 215px);
+    padding-bottom: 70px;
+    box-sizing: border-box;
+}

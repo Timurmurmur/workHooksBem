@@ -1,0 +1,13 @@
+.img{
+}
+.img.img_type_userPhoto{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border: 1px solid #95989A;
+    border-radius: 50%;
+}
+.img.img_size_icon{
+    width: 24px;
+    height: 24px;
+}

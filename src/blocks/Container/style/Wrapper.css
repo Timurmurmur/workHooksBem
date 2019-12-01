@@ -1,0 +1,48 @@
+.wrapper_comp_auth {
+    min-width: 485px;
+    max-width: 485px;
+    box-shadow: 0px -5px 30px 10px rgba(0, 0, 0, .1);
+    padding: 50px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper.wrapper_comp_card{
+    box-shadow: 0px 0px 8px 0px var(--shadow-sixty);
+    border-radius: 15px;
+    padding: 40px 30px 10px 30px;
+    margin-bottom: 20px;
+}
+
+/* NAVIGATION */
+
+.container.container_comp_compNav{
+    width: 100%;
+    box-shadow: 1px 1px 6px var(--shadow-sixty);
+    padding: 0px 40px 5px 40px;
+    box-sizing: border-box;
+}
+.wrapper.wrapper_comp_compNav{
+    margin-bottom: 20px;
+}
+.wrapper.wrapper_comp_compNav ul {
+    display: flex;
+    font-weight: bold;
+    font-size: 14px;
+}
+.wrapper.wrapper_comp_compNav ul li {
+    margin-right: 20px;
+    margin-top: 27px;
+    padding-bottom: 8px;
+}
+
+.wrapper.wrapper_comp_compTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    margin-top: 26px;
+    margin-left: 40px;
+}

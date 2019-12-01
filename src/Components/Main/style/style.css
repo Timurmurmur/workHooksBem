@@ -1,0 +1,225 @@
+.wrapper.wrapper_comp_main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card_type_task{
+    width: 60%;
+}
+.card_type_count{
+    width: 45%;
+}
+
+.wrapper.wrapper_comp_card .card_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    margin-bottom: 17px;
+    align-items: center;
+
+}
+.wrapper.wrapper_comp_card .card_header .card_header__title{
+    font-size: 26px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.wrapper.wrapper_comp_card .card_header .card_header__options{
+    padding-bottom: 5px;
+}
+.wrapper.wrapper_comp_card .card_header .card_header__options img:first-child{
+    margin-right: 12px;
+}
+.wrapper.wrapper_comp_cardHeaderNav{
+}
+.wrapper.wrapper_comp_cardHeaderNav ul{
+    display: flex;
+}
+.wrapper.wrapper_comp_cardHeaderNav ul li{
+    padding-bottom: 8px;
+}
+.wrapper.wrapper_comp_card a{
+    padding-bottom: 6px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+.wrapper.wrapper_comp_cardContent{
+}
+.table.table_comp_cardContent{
+    margin-top: 25px;
+    width: 100%;
+    border-spacing: 0px 15px;
+}
+.table-table tr th{
+
+}
+
+.table-colnaming th{
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    color: #313436;
+}
+.table-colname{
+    margin-right: 10px;
+}
+
+.table-colvalues th {
+    text-align: left;
+    font-size: 12px;
+    font-weight: normal;
+    color: #313436;
+    max-width: 200px;
+}
+.container.container_comp_stat{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 533px;
+}
+.wrapper.wrapper_comp_stat{
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.wrapper.stat_type_income{
+    background-color: #3D723B;
+    color: #fff;
+}
+.wrapper.stat_type_income p{
+    color: #FFD8A3;
+}
+.wrapper.stat_type_expense{
+    background-color: rgb(128, 90, 90);
+    color: #fff;
+}
+.wrapper.stat_type_profit{
+    padding: 12px 15px;
+    background-color: #fff;
+    box-shadow: 3px 3px 8px var(--shadow-sixty);
+}
+.wrapper.stat_type_profit .stat__info p{
+    font-size: 30px;
+}
+.wrapper.stat_type_profit .stat__title{
+    font-size: 21px;
+}
+.wrapper.stat_type_visitors{
+    background: #D6D6D6;
+    box-shadow: 3px 3px 8px var( --shadow-sixty);
+    padding: 10px;
+}
+.wrapper.stat_type_visitors .stat__title{
+    font-size: 21px;
+}
+.stat_type_visitors .stat__info p{
+    font-size: 30px;
+}
+.stat__info p{
+    font-weight: bold;
+    font-size: 24px;
+}
+.stat_type_income .stat__title{
+    margin-right: 20px;
+}
+.stat__title{
+    font-weight: bold;
+    font-size: 16px;
+}
+.stat__persent{
+    opacity: 40%;
+    font-size: 16px;
+}
+.stat_yesterday p{
+    font-weight: bold;
+    font-size: 21px;
+}
+.stat_yesterday__title{
+    opacity: 60%;
+    font-size: 14px;
+}
+
+.wrapper.stat_type_deal{
+    background-color: #F2F2F2;
+    box-shadow: 3px 3px 8px 1px var(--shadow-sixty);
+    padding: 10px;
+    padding-right: 15px;
+}
+.wrapper.stat_type_deal table tr th{
+    text-align-last: left;
+}
+.wrapper.stat_type_deal .stat__title{
+    font-size: 21px;
+    font-weight: bold;
+    padding-right: 14px;
+}
+
+.wrapper.stat_type_deal .stat__col{
+    font-size: 16px;
+    color: #8D8D8D;
+    font-weight: normal;
+}
+
+.statTime{
+    font-weight: normal;
+}
+.statVal{
+    font-size: 30px;
+    font-weight: bold;
+}
+.statVal_color_gray{
+    opacity: 40%;
+}
+.statVal_color_black{
+    padding-right: 10px;
+    color: #000;
+}
+
+.container.container_comp_countCard{
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 30px;
+}
+.wrapper.wrapper_comp_countCard{
+    width: 43%;
+    padding: 20px;
+    box-shadow: 1px 1px 5px 2px var(--shadow-sixty);
+}
+.countCard__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.countCard__title{
+    font-size: 14px;
+    color: var(--auth-color-blue);
+    font-weight: bold;
+}
+.countCard__price{
+    font-size: 24px;
+    color: #EBBA16;
+    font-weight: bold;
+}
+.countCard__bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.countCard__bold{
+    font-weight: bold;
+    font-size: 10px;
+}
+.countCard__gray{
+    color: #000;
+    opacity: 50%;
+    font-size: 12px;
+}
+.card__other{
+    color: var(--auth-color-blue);
+    font-weight: bold;
+    opacity: .5;
+    margin: 30px 0;
+    cursor: pointer;
+}
