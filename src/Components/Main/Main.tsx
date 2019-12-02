@@ -1,13 +1,14 @@
-import React from 'react';
-import { Container } from '../Container/Container';
-import './Main.css';
+import React from "react";
+import { Container } from "../Container/Container";
+import "./Main.css";
 
-import { Img, ShapeType } from '../Img/Img';
-import { Link } from '../Link/Link';
+import { Img, ShapeType } from "../Img/Img";
+import { Link } from "../Link/Link";
 
+// tslint:disable-next-line: no-empty-interface
 interface IState {}
 
-export interface MainProps {
+export interface IMainProps {
   message: string;
   message2: string;
   route: string;
@@ -15,7 +16,7 @@ export interface MainProps {
   click: () => void;
 }
 
-export class Main extends React.Component<MainProps, IState> {
+export class Main extends React.Component<IMainProps, IState> {
   public render() {
     const { click, message, message2, route } = this.props;
     console.log(message, message2, route);

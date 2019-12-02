@@ -1,39 +1,39 @@
-import React from 'react';
-import { Provider } from 'react-redux';
+import React from "react";
+import { Provider } from "react-redux";
 import {
   applyMiddleware,
   combineReducers,
   createStore,
   Middleware
-} from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+} from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import {
   combineEpics,
   createEpicMiddleware,
   EpicMiddleware
-} from 'redux-observable';
+} from "redux-observable";
 import {
   initializeCurrentLocation,
   State as RouterState
-} from 'redux-little-router';
-import createBrowserHistory from 'history/createBrowserHistory';
+} from "redux-little-router";
+import createBrowserHistory from "history/createBrowserHistory";
 
-import { Fragment, RouterActions } from 'redux-little-router';
+import { Fragment, RouterActions } from "redux-little-router";
 
 import {
   enhancer,
   middleware,
   routesMiddleware,
   reducer as router
-} from './router';
+} from "./router";
 
-import { MainAction } from '../Main/action';
-import { MainContainer } from '../Main/MainContainer';
-import { Reg } from '../Reg/Reg';
-import { Auth } from '../Auth/Auth';
-import { AppHeader } from '../AppHeader/AppHeader';
-import { Main } from '../Main/Main';
-import { Restore } from '../Restore/Reg';
+import { MainAction } from "../Main/action";
+import { MainContainer } from "../Main/MainContainer";
+import { Reg } from "../Reg/Reg";
+import { Auth } from "../Auth/Auth";
+import { AppHeader } from "../AppHeader/AppHeader";
+import { Main } from "../Main/Main";
+import { Restore } from "../Restore/Reg";
 
 export type Action = RouterActions | MainAction;
 export interface EpicDeps {
@@ -71,7 +71,7 @@ export const App: React.FC = () => {
       <Fragment forRoute="/">
         <Fragment forRoute="/">
           <AppHeader>
-            <MainContainer message={'hello'} />
+            <MainContainer message={"hello"} />
           </AppHeader>
         </Fragment>
       </Fragment>

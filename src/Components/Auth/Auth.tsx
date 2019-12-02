@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Button } from '../Button/Button';
-import { Checkbox } from '../Checkbox/Checkbox';
-import { Container } from '../Container/Container';
-import { Input } from '../Input/Input';
-import { Link } from '../Link/Link';
-import './Auth.css';
-import { emailChecker, passChecker } from './helper';
+import React, { useState } from "react";
+import { Button } from "../Button/Button";
+import { Checkbox } from "../Checkbox/Checkbox";
+import { Container } from "../Container/Container";
+import { Input } from "../Input/Input";
+import { Link } from "../Link/Link";
+import "./Auth.css";
+import { emailChecker, passChecker } from "./helper";
 
 export const Auth: React.FC = props => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState();
   const [passError, setPassError] = useState();
 

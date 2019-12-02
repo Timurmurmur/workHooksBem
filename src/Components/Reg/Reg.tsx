@@ -1,25 +1,35 @@
-import React, { useState } from 'react';
-import { Container } from '../Container/Container';
-import { Link } from '../Link/Link';
-import { Input } from '../Input/Input';
-import './Reg.css';
-import { Button } from '../Button/Button';
+import React, { useState } from "react";
+import { Container } from "../Container/Container";
+import { Link } from "../Link/Link";
+import { Input } from "../Input/Input";
+import "./Reg.css";
+import { Button } from "../Button/Button";
+import { emailChecker, passChecker, userNameChecker } from "./helpers";
 
 export const Reg: React.FC = (props: any) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [userName, setUserName] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [passError, setPassError] = useState(false);
+  const [userNameError, setUserNameError] = useState(false);
 
   function handleEmailChange(e: any) {
+    setEmailError(emailChecker(e.target.value));
     setEmail(e.target.value);
+    console.log(emailError);
   }
 
   function handlePasswordChange(e: any) {
+    setPassError(passChecker(e.target.value));
     setPassword(e.target.value);
+    console.log(passError);
   }
 
   function handleUserNameChange(e: any) {
+    setUserNameError(userNameChecker(e.target.value));
     setUserName(e.target.value);
+    console.log(userNameError);
   }
 
   return (
@@ -42,6 +52,7 @@ export const Reg: React.FC = (props: any) => {
               comp="auth"
               size="big"
               onchange={handleUserNameChange}
+              error={userNameError}
             />
             <Input
               value={email}
@@ -50,6 +61,7 @@ export const Reg: React.FC = (props: any) => {
               comp="auth"
               size="big"
               onchange={handleEmailChange}
+              error={emailError}
             />
             <Input
               value={password}
@@ -58,6 +70,7 @@ export const Reg: React.FC = (props: any) => {
               comp="auth"
               size="big"
               onchange={handlePasswordChange}
+              error={passError}
             />
             <Button size="big" comp="auth" color="blue">
               <span>SIGN UP</span>
