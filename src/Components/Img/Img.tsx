@@ -1,12 +1,13 @@
-import React, { FC } from 'react'
-import { cn } from '@bem-react/classname'
+import React, { FC } from 'react';
+import { cn } from '@bem-react/classname';
 import './Img.css';
 
-interface IImageType {
+interface IImageProps {
   src: ShapeType;
   comp: string;
-  size: string;
   alt: string;
+  width: number;
+  height: number;
 }
 export enum ShapeType {
   user_photo = 'user_photo',
@@ -22,9 +23,11 @@ export enum ShapeType {
   top_panel_noftication = 'top_panel_noftication',
   top_panel_logout = 'top_panel_logout',
   top_panel_search = 'top_panel_search',
+  header_reload = 'header_reload',
+  header_change = 'header_change'
 }
 
-const hash  = {
+const hash = {
   [ShapeType.user_photo]: require('../../assets/icons/user-photo.png'),
   [ShapeType.user_post]: require('../../assets/icons/user-post.png'),
   [ShapeType.desktop_icon]: require('../../assets/icons/header-desktop.png'),
@@ -37,17 +40,26 @@ const hash  = {
   [ShapeType.top_panel_right]: require('../../assets/icons/top-panel-right.png'),
   [ShapeType.top_panel_noftication]: require('../../assets/icons/top-panel-noftication.png'),
   [ShapeType.top_panel_logout]: require('../../assets/icons/top-panel-logout.png'),
-  [ShapeType.top_panel_search]: require('../../assets/icons/top-panel-search.png')
-}
+  [ShapeType.top_panel_search]: require('../../assets/icons/top-panel-search.png'),
+  [ShapeType.header_reload]: require('../../assets/icons/main_reload.svg'),
+  [ShapeType.header_change]: require('../../assets/icons/main_change.svg')
+};
 
 const imgCn = cn('img');
 
-export const Img: React.FC<IImageType> = React.memo(({ src,comp,size,alt }) => {
-  return <img src={hash[ShapeType[src]]} alt={alt} className={imgCn({comp,size})} />;
-});
-
+export const Img: React.FC<IImageProps> = React.memo(
+  ({ src, comp, width, height, alt }) => {
+    return (
+      <img
+        src={hash[ShapeType[src]]}
+        alt={alt}
+        style={{ width, height }}
+        className={imgCn({ comp })}
+      />
+    );
+  }
+);
 
 // React.memo(({size, comp, src, alt })) => (
-//   
+//
 // )
-

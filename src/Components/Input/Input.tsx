@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
-import { ReactType } from 'react'
-import { IClassNameProps } from '@bem-react/core'
-import { cn } from '@bem-react/classname'
-import './style/Input.css';
+import React, { FC } from 'react';
+import { ReactType } from 'react';
+import { IClassNameProps } from '@bem-react/core';
+import { cn } from '@bem-react/classname';
+import './Input.css';
 
 export interface IInputProps extends IClassNameProps {
   as?: ReactType;
@@ -12,10 +12,25 @@ export interface IInputProps extends IClassNameProps {
   type: string;
   onchange?: any;
   value?: string;
+  error?: boolean;
 }
 
-export const cnInput = cn('input')
+export const cnInput = cn('input');
 
-export const Input: React.FC<IInputProps> = ({ value,comp, size, placeholder, type, onchange }) => (
-  <input value={value} placeholder={placeholder} type={type} onChange={onchange} className={cnInput({ comp,size })}/>
-)
+export const Input: React.FC<IInputProps> = ({
+  value,
+  comp,
+  size,
+  placeholder,
+  type,
+  onchange,
+  error
+}) => (
+  <input
+    value={value}
+    placeholder={placeholder}
+    type={type}
+    onChange={onchange}
+    className={cnInput({ comp, size, error })}
+  />
+);

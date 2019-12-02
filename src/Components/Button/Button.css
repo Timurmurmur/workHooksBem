@@ -1,0 +1,34 @@
+button {
+  padding: 15px 0;
+  border: none;
+  cursor: pointer;
+}
+
+.button_size_big {
+  width: 100%;
+  font-size: 16px;
+}
+.button_size_normal {
+  width: 195px;
+  font-size: 12px;
+}
+.button_size_small {
+  width: 71px;
+}
+.button_color_blue {
+  background-color: var(--button-blue-bg);
+}
+.button_color_gray {
+  background-color: #f7f7f7;
+  box-shadow: 1px 1px 8px 1px var(--shadow-sixty);
+}
+.button_color_green {
+  background-color: #b2e232;
+  box-shadow: 1px 1px 6px 1px var(--shadow-sixty);
+}
+.button_color_green span {
+  color: #000;
+}
+.button_color_blue span {
+  color: #fff;
+}
