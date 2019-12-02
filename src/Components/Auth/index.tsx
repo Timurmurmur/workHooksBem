@@ -1,10 +1,10 @@
 import React,{useState} from 'react';
-import {Container} from '../../blocks/Container/Container';
-import {Link} from '../../blocks/Link/Link';
-import { Input } from '../../blocks/Input/Input';
+import {Container} from '../Container/Container';
+import {Link} from '../Link/Link';
+import { Input } from '../Input/Input';
 import './style/style.css';
-import { Button } from '../../blocks/Button/Button';
-import { Checkbox } from '../../blocks/Checkbox/Checkbox';
+import { Button } from '../Button/Button';
+import { Checkbox } from '../Checkbox/Checkbox';
 
 export const Auth: React.FC = (props) => {
     const [email, setEmail] = useState('');

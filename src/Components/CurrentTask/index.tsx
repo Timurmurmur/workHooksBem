@@ -1,11 +1,11 @@
 import React from 'react';
 import './style/style.css';
 import user_photo from '../../assets/images/user-photo.png';
-import { Container } from '../../blocks/Container/Container';
-import { Link } from '../../blocks/Link/Link';
+import { Container } from '../Container/Container';
+import { Link } from '../Link/Link';
 import Comments from './Comments';
 import TaskChangesHistory from './TaskChangesHistory';
-import { Button } from '../../blocks/Button/Button';
+import { Button } from '../Button/Button';
 
 interface IState{
     history: boolean;

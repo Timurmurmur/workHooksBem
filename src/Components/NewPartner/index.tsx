@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container } from '../../blocks/Container/Container';
-import { Link } from '../../blocks/Link/Link';
-import { Input } from '../../blocks/Input/Input';
-import { Select } from '../../blocks/Select/MySelect';
+import { Container } from '../Container/Container';
+import { Link } from '../Link/Link';
+import { Input } from '../Input/Input';
+import { Select } from '../Select/MySelect';
 import './style/style.css';
-import { Button } from '../../blocks/Button/Button';
+import { Button } from '../Button/Button';
 
 
 export class NewPartner extends React.Component<any,any>{

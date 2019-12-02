@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Container } from '../../blocks/Container/Container';
-import { Link } from '../../blocks/Link/Link';
-import { Input } from '../../blocks/Input/Input';
+import { Container } from '../Container/Container';
+import { Link } from '../Link/Link';
+import { Input } from '../Input/Input';
 import './style/style.css';
 import { Redirect } from 'react-router';
 

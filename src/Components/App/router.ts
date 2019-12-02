@@ -4,15 +4,23 @@ import {Action, State} from "./App";
 
 export enum RoutesPath {
     root = '/',
-    notFound = '/*'
+    notFound = '/404',
+    login = '/auth/login',
+    reg = '/auth/reg'
 }
 
 const routes = {
     [RoutesPath.root]: {
-        title: 'Главная страничка'
+        title: 'Рабочий стол'
     },
     [RoutesPath.notFound]: {
         title: '404 - не найдено :('
+    },
+    [RoutesPath.login]: {
+        title: 'Sign IN'
+    },
+    [RoutesPath.reg]: {
+        title: 'Sign UP'
     }
 };
 
