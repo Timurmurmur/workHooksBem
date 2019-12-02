@@ -1,9 +1,9 @@
 import React from 'react';
-import './Main.css';
 import { Container } from '../Container/Container';
+import './Main.css';
 
-import { Link } from '../Link/Link';
 import { Img, ShapeType } from '../Img/Img';
+import { Link } from '../Link/Link';
 
 interface IState {}
 
@@ -16,7 +16,7 @@ export interface MainProps {
 }
 
 export class Main extends React.Component<MainProps, IState> {
-  render() {
+  public render() {
     const { click, message, message2, route } = this.props;
     console.log(message, message2, route);
 
@@ -315,7 +315,8 @@ export class Main extends React.Component<MainProps, IState> {
                       comp="main"
                       color="blue"
                       size="normal"
-                      checked>
+                      checked
+                    >
                       <span>День</span>
                     </Link>
                   </li>

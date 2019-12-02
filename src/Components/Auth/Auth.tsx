@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Container } from '../Container/Container';
-import { Link } from '../Link/Link';
-import { Input } from '../Input/Input';
 import { Button } from '../Button/Button';
 import { Checkbox } from '../Checkbox/Checkbox';
-import { emailChecker, passChecker } from './helper';
+import { Container } from '../Container/Container';
+import { Input } from '../Input/Input';
+import { Link } from '../Link/Link';
 import './Auth.css';
+import { emailChecker, passChecker } from './helper';
 
 export const Auth: React.FC = props => {
   const [email, setEmail] = useState('');
@@ -35,7 +35,8 @@ export const Auth: React.FC = props => {
               comp="auth"
               color="blue"
               size="big"
-              checked>
+              checked
+            >
               <span>SIGN IN</span>
             </Link>
             <Link href="/auth/reg" comp="auth" color="gray" size="big">
