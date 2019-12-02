@@ -1,10 +1,9 @@
 import React from 'react';
 import './style/style.css';
-import { Container } from '../../blocks/Container/Container';
+import { Container } from '../Container/Container';
 import header_reload from '../../assets/icons/main_reload.svg';
 import header_change from '../../assets/icons/main_change.svg';
-import { Img } from '../../blocks/Img';
-import { Link } from '../../blocks/Link/Link';
+import { Link } from '../Link/Link';
 
 interface IState{
     
@@ -32,8 +31,8 @@ export class Main extends React.Component<MainProps, IState>{
                                 <span>Задачи</span>
                             </div>
                             <div className="card_header__options">
-                                <Img comp="" src={header_reload} alt="" size="icon"/>
-                                <Img comp="" src={header_change} alt="" size="icon"/>
+                                {/* <Img comp="" src={header_reload} alt="" size="icon"/>
+                                <Img comp="" src={header_change} alt="" size="icon"/> */}
                             </div>
                         </div>
                         <Container type="wrapper" comp="cardHeaderNav">
@@ -146,8 +145,8 @@ export class Main extends React.Component<MainProps, IState>{
                                 </ul>
                             </Container>
                             <div className="card_header__options">
-                                <Img comp="" src={header_reload} alt="" size="icon"/>
-                                <Img comp="" src={header_change} alt="" size="icon"/>
+                                {/* <Img comp="" src={header_reload} alt="" size="icon"/>
+                                <Img comp="" src={header_change} alt="" size="icon"/> */}
                             </div>
                         </div>
                         <Container comp="stat" type="container">
@@ -220,8 +219,8 @@ export class Main extends React.Component<MainProps, IState>{
                                 <span>Счета исходящие</span>
                             </div>
                             <div className="card_header__options">
-                                <Img comp="" src={header_reload} alt="" size="icon"/>
-                                <Img comp="" src={header_change} alt="" size="icon"/>
+                                {/* <Img comp="" src={header_reload} alt="" size="icon"/>
+                                <Img comp="" src={header_change} alt="" size="icon"/> */}
                             </div>
                         </div>
                         <Container type="wrapper" comp="cardHeaderNav">
@@ -315,8 +314,8 @@ export class Main extends React.Component<MainProps, IState>{
                                 <span>Счета входящие</span>
                             </div>
                             <div className="card_header__options">
-                                <Img comp="" src={header_reload} alt="" size="icon"/>
-                                <Img comp="" src={header_change} alt="" size="icon"/>
+                                {/* <Img comp="" src={header_reload} alt="" size="icon"/>
+                                <Img comp="" src={header_change} alt="" size="icon"/> */}
                             </div>
                         </div>
                         <Container type="wrapper" comp="cardHeaderNav">

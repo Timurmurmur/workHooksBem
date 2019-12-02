@@ -3,14 +3,21 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, combineReducers, createStore, Middleware } from "redux";
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { combineEpics, createEpicMiddleware, EpicMiddleware } from 'redux-observable';
-import {initializeCurrentLocation, State as RouterState} from 'redux-little-router';
+import { initializeCurrentLocation, State as RouterState } from 'redux-little-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 import { Fragment, RouterActions } from 'redux-little-router';
 
 import { enhancer, middleware, routesMiddleware, reducer as router } from './router';
+
+
 import { MainAction } from "../Main/action";
 import { MainContainer } from "../Main/MainContainer";
+import { Reg } from '../Reg';
+import { Auth } from '../Auth';
+import { AppHeader } from '../AppHeader/AppHeader';
+import { Main } from '../Main/Main';
+
 
 export type Action = RouterActions | MainAction;
 export interface EpicDeps {/* nothing */}
@@ -40,22 +47,17 @@ export const App: React.FC = () => {
   return (
     <Provider store={store}>
       <Fragment forRoute="/">
-        <>
-          <Fragment forRoute="/">
-            <MainContainer message={'Hello'} />
-          </Fragment>
-        </>
-        {/*<Fragment forRoute="/" children={compWithHeader(Main)}/>*/}
-        {/*<Fragment forRoute="/auth/login" children={<Auth />}/>*/}
-        {/*<Fragment forRoute="/auth/reg" children={<Reg />}/>*/}
-        {/*<Fragment forRoute="/auth/restore" children={Restore}/>*/}
-        {/*<Fragment forRoute="/count/:type" children={compWithHeader(Count)}/>*/}
-        {/*<Fragment forRoute="/new/count/:type" children={compWithHeader(NewCount)}/>*/}
-        {/*<Fragment forRoute="/tasks" children={compWithHeader(Tasks)}/>*/}
-        {/*<Fragment forRoute="/new/tasks" children={compWithHeader(NewTask)}/>*/}
-        {/*<Fragment forRoute="/current" children={compWithHeader(CurrentTask)}/>*/}
-        {/*<Fragment forRoute="/partners" children={compWithHeader(Partners)}/>*/}
-        {/*<Fragment forRoute="/new/partner" children={compWithHeader(NewPartner)}/>*/}
+        <Fragment forRoute="/">
+          <AppHeader>
+            <MainContainer message={'hello'}/>
+          </AppHeader>
+        </Fragment>
+      </Fragment>
+      <Fragment forRoute="/auth/login">
+          <Auth/>
+      </Fragment>
+      <Fragment forRoute="/auth/reg">
+        <Reg/>
       </Fragment>
     </Provider>
   )

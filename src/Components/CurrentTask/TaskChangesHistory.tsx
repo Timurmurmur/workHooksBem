@@ -1,6 +1,6 @@
 import React from 'react';
 import user_photo from '../../assets/images/user-photo.png';
-import { Button } from '../../blocks/Button/Button';
+import { Button } from '../Button/Button';
 
 
 export default function Comments(){

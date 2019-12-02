@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container } from '../../blocks/Container/Container';
-import { Link } from '../../blocks/Link/Link';
-import { Input } from '../../blocks/Input/Input';
+import { Container } from '../Container/Container';
+import { Link } from '../Link/Link';
+import { Input } from '../Input/Input';
 import user_photo from '../../assets/images/user-photo.png';
 import './style/style.css';
 

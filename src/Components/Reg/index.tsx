@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {Container} from '../../blocks/Container/Container';
-import {Link} from '../../blocks/Link/Link';
-import { Input } from '../../blocks/Input/Input';
+import {Container} from '../Container/Container';
+import {Link} from '../Link/Link';
+import { Input } from '../Input/Input';
 import './style/style.css';
-import { Button } from '../../blocks/Button/Button';
+import { Button } from '../Button/Button';
 
 
 export const Reg: React.FC = (props: any) => {

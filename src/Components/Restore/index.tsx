@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {Container} from '../../blocks/Container/Container';
-import {Link} from '../../blocks/Link/Link';
-import { Input } from '../../blocks/Input/Input';
-import { Button } from '../../blocks/Button/Button';
+import {Container} from '../Container/Container';
+import {Link} from '../Link/Link';
+import { Input } from '../Input/Input';
+import { Button } from '../Button/Button';
 import './style/style.css';
 
 export const Restore:React.FC = (props:any) => {

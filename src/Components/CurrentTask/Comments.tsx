@@ -1,7 +1,7 @@
 import React from 'react';
 import user_photo from '../../assets/images/user-photo.png';
-import { Input } from '../../blocks/Input/Input';
-import { Button } from '../../blocks/Button/Button';
+import { Input } from '../Input/Input';
+import { Button } from '../Button/Button';
 
 
 export default function Comments(){
