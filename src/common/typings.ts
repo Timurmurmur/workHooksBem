@@ -3,3 +3,9 @@ export type FunctionPropertyNames<T> = { [K in keyof T]: T[K] extends Function ?
 
 export type TStateProps<T, TOwnProps = {}> = Pick<T, Exclude<NonFunctionPropertyNames<T>, NonFunctionPropertyNames<TOwnProps>>>;
 export type TDispatchProps<T, TOwnProps = {}> = Pick<T, Exclude<FunctionPropertyNames<T>, FunctionPropertyNames<TOwnProps>>>;
+
+export enum PageStatus {
+    LOADING = 'LOADING',
+    LOADED = 'LOADED',
+    ERROR = 'ERROR'
+}
