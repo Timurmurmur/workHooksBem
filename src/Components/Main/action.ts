@@ -1,12 +1,13 @@
 export const CLICK = "CLICK";
 export type CLICK = typeof CLICK;
 
-export interface IClickAction {
+export interface ClickAction {
   type: CLICK;
+  payload: string;
 }
 
-export const click = (): IClickAction => {
-  return { type: CLICK };
+export const click = (): ClickAction => {
+  return { type: CLICK, payload: "TIMUR" };
 };
 
-export type MainAction = IClickAction;
+export type MainAction = ClickAction;

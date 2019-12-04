@@ -1,20 +1,17 @@
 import { connect } from "react-redux";
-import { Dispatch } from "redux";
-import { TDispatchProps, TStateProps } from "../../common/typings";
+import { Main, IMainProps } from "./Main";
 import { Action, State } from "../App/App";
+import { Dispatch } from "redux";
 import { click } from "./action";
-import { IMainProps, Main } from "./Main";
+import { TDispatchProps, TStateProps } from "../../common/typings";
 
-interface IOwnProps {
-  message: string;
-}
+interface OwnProps {}
 
-type StateProps = TStateProps<IMainProps, IOwnProps>;
-type DispatchProps = TDispatchProps<IMainProps, IOwnProps>;
+type StateProps = TStateProps<IMainProps, OwnProps>;
+type DispatchProps = TDispatchProps<IMainProps, OwnProps>;
 
-const mapStateToProps = (state: State, ownProps: IOwnProps): StateProps => {
+const mapStateToProps = (state: State, ownProps: OwnProps): StateProps => {
   return {
-    message2: ownProps.message + "2",
     route: state.router.pathname as string
   };
 };

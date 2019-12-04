@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "../Container/Container";
 import "./Main.css";
-
 import { Img, ShapeType } from "../Img/Img";
 import { Link } from "../Link/Link";
 
@@ -9,17 +8,13 @@ import { Link } from "../Link/Link";
 interface IState {}
 
 export interface IMainProps {
-  message: string;
-  message2: string;
   route: string;
-
   click: () => void;
 }
 
 export class Main extends React.Component<IMainProps, IState> {
   public render() {
-    const { click, message, message2, route } = this.props;
-    console.log(message, message2, route);
+    const { click, route } = this.props;
 
     return (
       <div onClick={click}>
