@@ -1,32 +1,68 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { applyMiddleware, combineReducers, createStore, Middleware } from "redux";
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { combineEpics, createEpicMiddleware, EpicMiddleware } from 'redux-observable';
-import {initializeCurrentLocation, State as RouterState} from 'redux-little-router';
-import createBrowserHistory from 'history/createBrowserHistory';
+import createBrowserHistory from "history/createBrowserHistory";
+import React from "react";
+import { Provider } from "react-redux";
+import {
+  applyMiddleware,
+  combineReducers,
+  createStore,
+  Middleware
+} from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import {
+  initializeCurrentLocation,
+  State as RouterState
+} from "redux-little-router";
+import {
+  combineEpics,
+  createEpicMiddleware,
+  EpicMiddleware
+} from "redux-observable";
 
-import { Fragment, RouterActions } from 'redux-little-router';
+import { Fragment, RouterActions } from "redux-little-router";
 
-import { enhancer, middleware, routesMiddleware, reducer as router } from './router';
+import {
+  enhancer,
+  middleware,
+  reducer as router,
+  routesMiddleware
+} from "./router";
+import { AppHeader } from "../AppHeader/AppHeader";
+import { Count } from "../Count/Count";
+import { LoginAction, loginUser } from "../Login/action";
+import { Login } from "../Login/Login";
 import { MainAction } from "../Main/action";
 import { MainContainer } from "../Main/MainContainer";
+import { NewCount } from "../NewCount/NewCount";
+import { Reg } from "../Reg/Reg";
+import { Restore } from "../Restore/Restore";
+import { Tasks } from "../Tasks/Tasks";
+import { loginReducer } from "./reducers";
+import { Partners } from "../Partners/Partners";
+import { NewPartner } from "../NewPartner/NewPartner";
+import { NewTasks } from "../NewTask/NewTask";
 
-export type Action = RouterActions | MainAction;
-export interface EpicDeps {/* nothing */}
-export interface State extends RouterState {/* nothing */}
+export type Action = LoginAction | RouterActions | MainAction;
+export interface EpicDeps {
+  /* nothing */
+}
+export interface State extends RouterState {
+  // loginReducer: (State: State) => State;
+}
 
-const createMiddleware = (epicMiddleware: EpicMiddleware<Action, Action, State, EpicDeps>) =>
-    applyMiddleware(middleware, epicMiddleware, routesMiddleware);
+const createMiddleware = (
+  epicMiddleware: EpicMiddleware<Action, Action, State, EpicDeps>
+) => applyMiddleware(middleware, epicMiddleware, routesMiddleware);
 
 export const App: React.FC = () => {
   const history = createBrowserHistory();
   const composeEnhancers = composeWithDevTools({ serialize: true });
-  const epicMiddleware = createEpicMiddleware<Action, Action, State, EpicDeps>({ dependencies: {} });
+  const epicMiddleware = createEpicMiddleware<Action, Action, State, EpicDeps>({
+    dependencies: {}
+  });
 
   const store = createStore<State, Action, {}, {}>(
-      combineReducers({ router }),
-      composeEnhancers(enhancer, createMiddleware(epicMiddleware))
+    combineReducers({ router }),
+    composeEnhancers(createMiddleware(epicMiddleware))
   );
 
   epicMiddleware.run(combineEpics());
@@ -40,23 +76,39 @@ export const App: React.FC = () => {
   return (
     <Provider store={store}>
       <Fragment forRoute="/">
-        <>
+        <AppHeader>
           <Fragment forRoute="/">
-            <MainContainer message={'Hello'} />
+            <MainContainer />
           </Fragment>
-        </>
-        {/*<Fragment forRoute="/" children={compWithHeader(Main)}/>*/}
-        {/*<Fragment forRoute="/auth/login" children={<Auth />}/>*/}
-        {/*<Fragment forRoute="/auth/reg" children={<Reg />}/>*/}
-        {/*<Fragment forRoute="/auth/restore" children={Restore}/>*/}
-        {/*<Fragment forRoute="/count/:type" children={compWithHeader(Count)}/>*/}
-        {/*<Fragment forRoute="/new/count/:type" children={compWithHeader(NewCount)}/>*/}
-        {/*<Fragment forRoute="/tasks" children={compWithHeader(Tasks)}/>*/}
-        {/*<Fragment forRoute="/new/tasks" children={compWithHeader(NewTask)}/>*/}
-        {/*<Fragment forRoute="/current" children={compWithHeader(CurrentTask)}/>*/}
-        {/*<Fragment forRoute="/partners" children={compWithHeader(Partners)}/>*/}
-        {/*<Fragment forRoute="/new/partner" children={compWithHeader(NewPartner)}/>*/}
+          <Fragment forRoute="/count/:type">
+            <Count />
+          </Fragment>
+          <Fragment forRoute="/new-count/:type">
+            <NewCount />
+          </Fragment>
+          <Fragment forRoute="/tasks">
+            <Tasks />
+          </Fragment>
+          <Fragment forRoute="/partners">
+            <Partners />
+          </Fragment>
+          <Fragment forRoute="/new-partner">
+            <NewPartner />
+          </Fragment>
+          <Fragment forRoute="/new-task">
+            <NewTasks />
+          </Fragment>
+        </AppHeader>
+      </Fragment>
+      <Fragment forRoute="/auth/login">
+        <Login />
+      </Fragment>
+      <Fragment forRoute="/auth/reg">
+        <Reg />
+      </Fragment>
+      <Fragment forRoute="/auth/restore">
+        <Restore />
       </Fragment>
     </Provider>
-  )
+  );
 };
