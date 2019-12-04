@@ -24,20 +24,22 @@ import {
   enhancer,
   middleware,
   routesMiddleware,
-  reducer as router,
-  loginMiddleware
+  reducer as router
 } from "./router";
-
+export { loginReducer } from "./reducers";
 import { MainAction } from "../Main/action";
 import { MainContainer } from "../Main/MainContainer";
 import { AppHeader } from "../AppHeader/AppHeader";
 import { Main } from "../Main/Main";
 import { Login } from "../Login/Login";
 import { LoginAction } from "../Login/action";
-import { Restore } from "../Restore/Reg";
+import { Restore } from "../Restore/Restore";
 import { Reg } from "../Reg/Reg";
+import { Count } from "../Count/Count";
+import { NewCount } from "../NewCount/NewCount";
+import { Tasks } from "../Tasks/Tasks";
 
-export type Action = RouterActions | MainAction | LoginAction;
+export type Action = LoginAction | RouterActions | MainAction;
 export interface EpicDeps {
   /* nothing */
 }
@@ -47,13 +49,7 @@ export interface State extends RouterState {
 
 const createMiddleware = (
   epicMiddleware: EpicMiddleware<Action, Action, State, EpicDeps>
-) =>
-  applyMiddleware(
-    middleware,
-    epicMiddleware,
-    routesMiddleware,
-    loginMiddleware
-  );
+) => applyMiddleware(middleware, epicMiddleware, routesMiddleware);
 
 export const App: React.FC = () => {
   const history = createBrowserHistory();
@@ -63,8 +59,8 @@ export const App: React.FC = () => {
   });
 
   const store = createStore<State, Action, {}, {}>(
-    combineReducers({ router }),
-    composeEnhancers(enhancer, createMiddleware(epicMiddleware))
+    combineReducers({ router, loginReducer }),
+    composeEnhancers(createMiddleware(epicMiddleware))
   );
 
   epicMiddleware.run(combineEpics());
@@ -78,11 +74,20 @@ export const App: React.FC = () => {
   return (
     <Provider store={store}>
       <Fragment forRoute="/">
-        <Fragment forRoute="/">
-          <AppHeader>
+        <AppHeader>
+          <Fragment forRoute="/">
             <MainContainer />
-          </AppHeader>
-        </Fragment>
+          </Fragment>
+          <Fragment forRoute="/count/:type">
+            <Count />
+          </Fragment>
+          <Fragment forRoute="/new/count/:type">
+            <NewCount />
+          </Fragment>
+          <Fragment forRoute="/tasks">
+            <Tasks />
+          </Fragment>
+        </AppHeader>
       </Fragment>
       <Fragment forRoute="/auth/login">
         <Login />

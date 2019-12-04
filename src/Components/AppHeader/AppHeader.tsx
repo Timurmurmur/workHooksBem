@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Container } from '../Container/Container';
-import { Img, ShapeType } from '../Img/Img';
-import { Link } from '../Link/Link';
-import './AppHeader.css';
+import React, { useState } from "react";
+import { Container } from "../Container/Container";
+import { Img, ShapeType } from "../Img/Img";
+import { Link } from "../Link/Link";
+import "./AppHeader.css";
 
 export const AppHeader: React.FC = ({ children }) => {
   const [time, setTime] = useState();
@@ -19,26 +19,26 @@ export const AppHeader: React.FC = ({ children }) => {
 
   const chooseWeekDay = (day: number, month: number) => {
     let weekdayArray = [
-      'Воскресенье',
-      'Понедельник',
-      'Вторник',
-      'Среда',
-      'Четверг',
-      'Пятница',
-      'Суббота'
+      "Воскресенье",
+      "Понедельник",
+      "Вторник",
+      "Среда",
+      "Четверг",
+      "Пятница",
+      "Суббота"
     ];
     let monthArray = [
-      'Января',
-      'Февраля',
-      'Марта',
-      'Апреля',
-      'Мая',
-      'Июня',
-      'Июля',
-      'Августа',
-      'Сентября',
-      'Ноября',
-      'Декабря'
+      "Января",
+      "Февраля",
+      "Марта",
+      "Апреля",
+      "Мая",
+      "Июня",
+      "Июля",
+      "Августа",
+      "Сентября",
+      "Ноября",
+      "Декабря"
     ];
     setWeekDay(weekdayArray[day]);
     setMonth(monthArray[month - 1]);
@@ -87,7 +87,8 @@ export const AppHeader: React.FC = ({ children }) => {
               href="/count/income"
               comp="AppHeaderNav"
               color="white"
-              size="small">
+              size="small"
+            >
               <Img
                 src={ShapeType.price_icon}
                 alt=""
@@ -97,7 +98,7 @@ export const AppHeader: React.FC = ({ children }) => {
               />
               <span>Счета</span>
             </Link>
-            <Link href="" comp="AppHeaderNav" color="white" size="small">
+            <Link href="/tasks" comp="AppHeaderNav" color="white" size="small">
               <Img
                 src={ShapeType.header_task}
                 alt=""
@@ -170,7 +171,8 @@ export const AppHeader: React.FC = ({ children }) => {
                   color="black"
                   size="small"
                   count
-                  countBg="green">
+                  countBg="green"
+                >
                   <span>3</span>
                   <Img
                     src={ShapeType.header_mail}
@@ -186,7 +188,8 @@ export const AppHeader: React.FC = ({ children }) => {
                   color="black"
                   size="small"
                   count
-                  countBg="green">
+                  countBg="green"
+                >
                   <span>3</span>
                   <Img
                     src={ShapeType.header_message}
@@ -202,7 +205,8 @@ export const AppHeader: React.FC = ({ children }) => {
                   color="black"
                   size="small"
                   count
-                  countBg="gray">
+                  countBg="gray"
+                >
                   <span>3</span>
                   <Img
                     src={ShapeType.top_panel_noftication}
@@ -225,7 +229,8 @@ export const AppHeader: React.FC = ({ children }) => {
                   href="/auth/login"
                   comp="AppHeaderNavTop"
                   color="black"
-                  size="normal">
+                  size="normal"
+                >
                   <Img
                     src={ShapeType.top_panel_logout}
                     alt=""

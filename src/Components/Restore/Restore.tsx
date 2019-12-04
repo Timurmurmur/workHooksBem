@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Container } from '../Container/Container';
-import { Link } from '../Link/Link';
-import { Input } from '../Input/Input';
-import { Button } from '../Button/Button';
-import './Reg.css';
+import React, { useState } from "react";
+import { Container } from "../Container/Container";
+import { Link } from "../Link/Link";
+import { Input } from "../Input/Input";
+import { Button } from "../Button/Button";
+import "./Restore.css";
 
 export const Restore: React.FC = (props: any) => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   function handleEmailChange(e: any) {
     setEmail(e.target.value);
