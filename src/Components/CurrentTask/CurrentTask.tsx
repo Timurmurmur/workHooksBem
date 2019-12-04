@@ -1,5 +1,5 @@
 import React from "react";
-import "./style/style.css";
+import "./CurrentTaks.css";
 import user_photo from "../../assets/images/user-photo.png";
 import { Container } from "../Container/Container";
 import { Link } from "../Link/Link";

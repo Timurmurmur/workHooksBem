@@ -31,20 +31,22 @@ import { Count } from "../Count/Count";
 import { LoginAction, loginUser } from "../Login/action";
 import { Login } from "../Login/Login";
 import { MainAction } from "../Main/action";
-import { Main } from "../Main/Main";
 import { MainContainer } from "../Main/MainContainer";
 import { NewCount } from "../NewCount/NewCount";
 import { Reg } from "../Reg/Reg";
 import { Restore } from "../Restore/Restore";
 import { Tasks } from "../Tasks/Tasks";
 import { loginReducer } from "./reducers";
+import { Partners } from "../Partners/Partners";
+import { NewPartner } from "../NewPartner/NewPartner";
+import { NewTasks } from "../NewTask/NewTask";
 
 export type Action = LoginAction | RouterActions | MainAction;
 export interface EpicDeps {
   /* nothing */
 }
 export interface State extends RouterState {
-  loginReducer: (initalState: State) => State;
+  // loginReducer: (State: State) => State;
 }
 
 const createMiddleware = (
@@ -59,7 +61,7 @@ export const App: React.FC = () => {
   });
 
   const store = createStore<State, Action, {}, {}>(
-    combineReducers({ router, loginReducer }),
+    combineReducers({ router }),
     composeEnhancers(createMiddleware(epicMiddleware))
   );
 
@@ -81,11 +83,20 @@ export const App: React.FC = () => {
           <Fragment forRoute="/count/:type">
             <Count />
           </Fragment>
-          <Fragment forRoute="/new/count/:type">
+          <Fragment forRoute="/new-count/:type">
             <NewCount />
           </Fragment>
           <Fragment forRoute="/tasks">
             <Tasks />
+          </Fragment>
+          <Fragment forRoute="/partners">
+            <Partners />
+          </Fragment>
+          <Fragment forRoute="/new-partner">
+            <NewPartner />
+          </Fragment>
+          <Fragment forRoute="/new-task">
+            <NewTasks />
           </Fragment>
         </AppHeader>
       </Fragment>

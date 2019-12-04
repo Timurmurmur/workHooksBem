@@ -23,8 +23,11 @@ export enum RoutesPath {
   login = "/auth/login",
   reg = "/auth/reg",
   count = "/count/:type",
-  newCount = "/new/count/:type",
-  tasks = "/tasks"
+  newCount = "/new-count/:type",
+  newPartner = "/new-partner",
+  newTask = "/new-task",
+  tasks = "/tasks",
+  partners = "/partners"
 }
 
 const routes = {
@@ -48,6 +51,15 @@ const routes = {
   },
   [RoutesPath.tasks]: {
     title: "Задачи"
+  },
+  [RoutesPath.partners]: {
+    title: "Партнеры"
+  },
+  [RoutesPath.newPartner]: {
+    title: "Новый партнер"
+  },
+  [RoutesPath.newTask]: {
+    title: "Новая задача"
   }
 };
 
@@ -68,7 +80,7 @@ export const routesMiddleware: Middleware<State, State, Dispatch<Action>> = (
       break;
   }
 
-  return loginReducer(useStore().getState(), action);
+  return next(action);
 };
 
 export const { reducer, enhancer, middleware } = routerForBrowser({ routes });

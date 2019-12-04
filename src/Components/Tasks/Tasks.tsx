@@ -77,7 +77,12 @@ export const Tasks: React.FC = () => {
           <i className="fas fa-search"></i>
         </div>
         <div className="compTitle__right">
-          <Link href="#" comp="compTitle" color="blue" size="normal"></Link>
+          <Link
+            href="/new-task"
+            comp="compTitle"
+            color="blue"
+            size="normal"
+          ></Link>
         </div>
       </Container>
       <div className="wrapper wrapper_comp_card container_comp_tasks container_comp_count">

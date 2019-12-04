@@ -1,49 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "../Container/Container";
 import { Img, ShapeType } from "../Img/Img";
 import { Link } from "../Link/Link";
 import "./AppHeader.css";
+import { Routing } from "../Routing/Routing";
+import { Timer } from "./Clock";
 
 export const AppHeader: React.FC = ({ children }) => {
-  const [time, setTime] = useState();
-  const [monthDay, setMonthDay] = useState();
-  const [weekDay, setWeekDay] = useState();
-  const [month, setMonth] = useState();
-
-  setInterval(() => {
-    var now = new Date();
-    setTime(now.toLocaleTimeString());
-    setMonthDay(now.getDate());
-    chooseWeekDay(now.getDay(), now.getMonth());
-  }, 1000);
-
-  const chooseWeekDay = (day: number, month: number) => {
-    let weekdayArray = [
-      "Воскресенье",
-      "Понедельник",
-      "Вторник",
-      "Среда",
-      "Четверг",
-      "Пятница",
-      "Суббота"
-    ];
-    let monthArray = [
-      "Января",
-      "Февраля",
-      "Марта",
-      "Апреля",
-      "Мая",
-      "Июня",
-      "Июля",
-      "Августа",
-      "Сентября",
-      "Ноября",
-      "Декабря"
-    ];
-    setWeekDay(weekdayArray[day]);
-    setMonth(monthArray[month - 1]);
-  };
-
   return (
     <>
       <Container type="wrapper" comp="AppHeader">
@@ -128,7 +91,12 @@ export const AppHeader: React.FC = ({ children }) => {
               />
               <span>Почта</span>
             </Link>
-            <Link href="" comp="AppHeaderNav" color="white" size="small">
+            <Link
+              href="/partners"
+              comp="AppHeaderNav"
+              color="white"
+              size="small"
+            >
               <Img
                 src={ShapeType.header_partners}
                 alt=""
@@ -154,15 +122,7 @@ export const AppHeader: React.FC = ({ children }) => {
           <div className="AppHeader_pos_top">
             <Container comp="AppHeaderTop" type="container">
               <Container comp="timer" type="wrapper">
-                <div className="timer__time">
-                  <span>{time}</span>
-                </div>
-                <div className="timer__other">
-                  <span className="timer__weekday">{weekDay}</span>
-                  <span className="timer__monthday">
-                    {monthDay} {month}
-                  </span>
-                </div>
+                <Timer />
               </Container>
               <Container comp="AppHeaderNavTop" type="wrapper">
                 <Link
@@ -242,7 +202,10 @@ export const AppHeader: React.FC = ({ children }) => {
               </Container>
             </Container>
           </div>
-          <div className="wrapper wrapper_comp_content">{children}</div>
+          <div className="wrapper wrapper_comp_content">
+            <Routing />
+            {children}
+          </div>
         </div>
         <div className="AppHeader_pos_right">
           <Link comp="AppHeaderRight" href="#" size="small">

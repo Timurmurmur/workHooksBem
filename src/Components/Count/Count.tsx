@@ -92,7 +92,7 @@ export const Count: React.FC = () => {
             {router.params.type === "income" ? (
               <>
                 <Link
-                  href="/new/count/income"
+                  href="/new-count/income"
                   comp="compTitle"
                   color="blue"
                   size="normal"
@@ -101,7 +101,7 @@ export const Count: React.FC = () => {
             ) : (
               <>
                 <Link
-                  href="/new/count/outgoing"
+                  href="/new-count/outgoing"
                   comp="compTitle"
                   color="blue"
                   size="normal"
