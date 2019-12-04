@@ -15,6 +15,7 @@ import { Action, State } from "./App";
 import { LOGIN_USER, loginUser } from "../Login/action";
 import { useState, ReducerState } from "react";
 import { useStore } from "react-redux";
+import { loginReducer } from "./reducers";
 
 export enum RoutesPath {
   root = "/",
@@ -50,7 +51,7 @@ const routes = {
   }
 };
 
-export const routesMiddleware: Middleware<{}, State, Dispatch<Action>> = (
+export const routesMiddleware: Middleware<State, State, Dispatch<Action>> = (
   store: MiddlewareAPI<Dispatch<Action>>
 ): ((next: Dispatch<Action>) => (action: Action) => Action) => (
   next: Dispatch<Action>
@@ -67,7 +68,7 @@ export const routesMiddleware: Middleware<{}, State, Dispatch<Action>> = (
       break;
   }
 
-  return next(action);
+  return loginReducer(useStore().getState(), action);
 };
 
 export const { reducer, enhancer, middleware } = routerForBrowser({ routes });

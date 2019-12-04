@@ -1,3 +1,4 @@
+import createBrowserHistory from "history/createBrowserHistory";
 import React from "react";
 import { Provider } from "react-redux";
 import {
@@ -8,43 +9,42 @@ import {
 } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
+  initializeCurrentLocation,
+  State as RouterState
+} from "redux-little-router";
+import {
   combineEpics,
   createEpicMiddleware,
   EpicMiddleware
 } from "redux-observable";
-import {
-  initializeCurrentLocation,
-  State as RouterState
-} from "redux-little-router";
-import createBrowserHistory from "history/createBrowserHistory";
 
 import { Fragment, RouterActions } from "redux-little-router";
 
 import {
   enhancer,
   middleware,
-  routesMiddleware,
-  reducer as router
+  reducer as router,
+  routesMiddleware
 } from "./router";
-export { loginReducer } from "./reducers";
-import { MainAction } from "../Main/action";
-import { MainContainer } from "../Main/MainContainer";
 import { AppHeader } from "../AppHeader/AppHeader";
-import { Main } from "../Main/Main";
-import { Login } from "../Login/Login";
-import { LoginAction } from "../Login/action";
-import { Restore } from "../Restore/Restore";
-import { Reg } from "../Reg/Reg";
 import { Count } from "../Count/Count";
+import { LoginAction, loginUser } from "../Login/action";
+import { Login } from "../Login/Login";
+import { MainAction } from "../Main/action";
+import { Main } from "../Main/Main";
+import { MainContainer } from "../Main/MainContainer";
 import { NewCount } from "../NewCount/NewCount";
+import { Reg } from "../Reg/Reg";
+import { Restore } from "../Restore/Restore";
 import { Tasks } from "../Tasks/Tasks";
+import { loginReducer } from "./reducers";
 
 export type Action = LoginAction | RouterActions | MainAction;
 export interface EpicDeps {
   /* nothing */
 }
 export interface State extends RouterState {
-  /* nothing */
+  loginReducer: (initalState: State) => State;
 }
 
 const createMiddleware = (
