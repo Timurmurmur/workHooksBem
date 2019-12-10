@@ -65,7 +65,7 @@ export const Partners: React.FC = () => {
         </div>
         <div className="compTitle__right">
           <Link
-            href="/new/partner"
+            href="/new-partner"
             comp="compTitle"
             color="blue"
             size="normal"

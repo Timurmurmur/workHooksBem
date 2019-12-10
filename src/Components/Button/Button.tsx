@@ -4,7 +4,12 @@ import React from "react";
 import { ReactType } from "react";
 import "./Button.css";
 
-export interface IButtonProps extends IClassNameProps {
+export interface IButtonProps
+  extends IClassNameProps,
+    React.DetailedHTMLProps<
+      React.ButtonHTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    > {
   as?: ReactType;
   comp: string;
   size: string;

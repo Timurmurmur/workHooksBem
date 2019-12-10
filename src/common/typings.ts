@@ -17,3 +17,9 @@ export type TDispatchProps<T, TOwnProps = {}> = Pick<
   T,
   Exclude<FunctionPropertyNames<T>, FunctionPropertyNames<TOwnProps>>
 >;
+
+export enum PageStatus {
+  LOADING = "LOADING",
+  LOADED = "LOADED",
+  ERROR = "ERROR"
+}

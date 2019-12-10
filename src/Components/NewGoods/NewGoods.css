@@ -1,0 +1,57 @@
+.wrapper_comp_addImage {
+}
+
+.addImage_images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button_comp_addImage {
+  color: var(--auth-color-blue);
+  border-bottom: 1px dashed var(--auth-color-blue);
+  font-size: 10px;
+  margin-left: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.wrapper_comp_selectGroup {
+  display: flex;
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+
+.wrapper_comp_selectGroup span {
+  font-size: 14px;
+  margin-right: 90px;
+}
+
+.wrapper_comp_selectGroup select {
+  width: 282px;
+}
+
+.container_comp_newGoodsTable {
+  display: flex;
+}
+
+.container_comp_newGoodsTable table:first-child {
+  margin-right: 100px;
+}
+
+.checkbox input[type="checkbox"]:checked + label:after {
+  top: -5px;
+  left: -23px;
+}
+
+.checkbox_comp_newGoods label::before {
+  top: 2px;
+}
+
+.checkbox_comp_newGoods label {
+  color: black;
+  font-size: 14px;
+}
+
+.select.select_comp_newGoods {
+  width: 160px;
+}

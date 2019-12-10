@@ -1,0 +1,83 @@
+.link {
+  box-sizing: border-box;
+}
+
+.link.link_checked {
+  border-bottom: 2px solid var(--auth-color-blue);
+}
+
+.link.link_color_blue span {
+  color: var(--auth-color-blue);
+}
+
+.link.link_color_gray span {
+  color: var(--text-gray-color);
+}
+
+.link.link_color_white span {
+  color: #fff;
+}
+
+.link.link_color_black span {
+  color: #000;
+}
+
+.link_size_big {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.link_size_normal {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.link.link_count {
+  position: relative;
+}
+
+.link.link_count span {
+  position: absolute;
+  top: -8px;
+  right: -7px;
+  padding: 3px 6px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.link.link_count.link_countBg_green span {
+  background-color: rgb(6, 145, 0);
+}
+
+.link.link_count.link_countBg_gray span {
+  background-color: #313436;
+}
+
+.link.link_comp_compNav.link_checked {
+  padding-bottom: 6px;
+}
+
+.link.link_comp_compTitle {
+  background-color: var(--button-blue-bg);
+  box-sizing: border-box;
+  color: #fff;
+  position: relative;
+  border-radius: 50%;
+  max-width: 40px;
+  max-height: 40px;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.link.link_comp_compTitle::after {
+  position: absolute;
+  content: "+";
+  font-weight: bold;
+  font-size: 35px;
+  z-index: 1000;
+  color: #fff;
+  top: -5px;
+  left: 10px;
+}

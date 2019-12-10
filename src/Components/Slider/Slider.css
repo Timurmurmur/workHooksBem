@@ -1,0 +1,35 @@
+.wrapper_comp_slider {
+  position: relative;
+}
+
+.slider__image {
+  width: 100%;
+  height: 232px;
+  transition: all;
+  transition-duration: 1s;
+  background-size: cover;
+}
+
+.slider__option {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.slider__option .button {
+  margin-right: 10px;
+}
+
+.button.button_comp_slider {
+  content: "";
+  background-color: #378fc9;
+  border: 1px solid #fff;
+  width: 9px;
+  height: 9px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+}

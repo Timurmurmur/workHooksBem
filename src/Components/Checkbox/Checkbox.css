@@ -3,24 +3,27 @@
   color: var(--text-gray-color);
   margin-left: 20px;
 }
+
 .checkbox label::before {
   position: absolute;
-  content: '';
+  content: "";
   padding: 6px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 3px;
   left: -20px;
   top: 5px;
 }
-.checkbox input[type='checkbox']:checked + label:after {
+
+.checkbox input[type="checkbox"]:checked + label:after {
   position: absolute;
   top: -4px;
   left: -23px;
-  content: '✔';
+  content: "✔";
   padding: 4px;
   border-radius: 5px;
   color: rgb(0, 0, 0);
 }
-.checkbox input[type='checkbox'] {
+
+.checkbox input[type="checkbox"] {
   display: none;
 }

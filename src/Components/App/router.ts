@@ -12,10 +12,6 @@ import {
   combineReducers
 } from "redux";
 import { Action, State } from "./App";
-import { LOGIN_USER, loginUser } from "../Login/action";
-import { useState, ReducerState } from "react";
-import { useStore } from "react-redux";
-import { loginReducer } from "./reducers";
 
 export enum RoutesPath {
   root = "/",
@@ -27,7 +23,10 @@ export enum RoutesPath {
   newPartner = "/new-partner",
   newTask = "/new-task",
   tasks = "/tasks",
-  partners = "/partners"
+  partners = "/partners",
+  organization = "/organization",
+  goods = "/goods",
+  newGoods = "/new-goods"
 }
 
 const routes = {
@@ -60,9 +59,17 @@ const routes = {
   },
   [RoutesPath.newTask]: {
     title: "Новая задача"
+  },
+  [RoutesPath.organization]: {
+    title: "Наши организации"
+  },
+  [RoutesPath.goods]: {
+    title: "Товары"
+  },
+  [RoutesPath.newGoods]: {
+    title: "Новый товар"
   }
 };
-
 export const routesMiddleware: Middleware<State, State, Dispatch<Action>> = (
   store: MiddlewareAPI<Dispatch<Action>>
 ): ((next: Dispatch<Action>) => (action: Action) => Action) => (
@@ -84,13 +91,3 @@ export const routesMiddleware: Middleware<State, State, Dispatch<Action>> = (
 };
 
 export const { reducer, enhancer, middleware } = routerForBrowser({ routes });
-
-// export const loginReducer: Reducer<State, Action> = (
-//   state: State = useStore().getState(),
-//   action: Action
-// ): State => {
-//   switch (action.type) {
-//     default:
-//       return state;
-//   }
-// };
