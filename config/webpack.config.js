@@ -54,6 +54,9 @@ const cssModuleRegex = /\.module\.css$/;
 module.exports = function (webpackEnv) {
 =======
 module.exports = function(webpackEnv) {
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
   const isEnvDevelopment = webpackEnv === "development";
   const isEnvProduction = webpackEnv === "production";
@@ -74,6 +77,9 @@ module.exports = function(webpackEnv) {
   const publicPath = isEnvProduction
     ? paths.servedPath
     : isEnvDevelopment && "/";
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
   // Some apps do not use client-side routing with pushState.
   // For these, "homepage" can be set to "." to enable relative asset paths.
@@ -90,6 +96,9 @@ module.exports = function(webpackEnv) {
   const publicUrl = isEnvProduction
     ? publicPath.slice(0, -1)
     : isEnvDevelopment && "";
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
   // Get environment variables to inject into our app.
   const env = getClientEnvironment(publicUrl);
@@ -101,9 +110,13 @@ module.exports = function(webpackEnv) {
       isEnvProduction && {
         loader: MiniCssExtractPlugin.loader,
 <<<<<<< HEAD
+<<<<<<< HEAD
         options: shouldUseRelativeAssetPaths ? {
           publicPath: "../../"
         } : {}
+=======
+        options: shouldUseRelativeAssetPaths ? { publicPath: "../../" } : {}
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
 =======
         options: shouldUseRelativeAssetPaths ? { publicPath: "../../" } : {}
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
@@ -162,6 +175,9 @@ module.exports = function(webpackEnv) {
           options: {
             sourceMap: true
           }
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
         }
       });
@@ -185,6 +201,9 @@ module.exports = function(webpackEnv) {
         ? "source-map"
         : false
       : isEnvDevelopment && "cheap-module-source-map",
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
@@ -201,7 +220,11 @@ module.exports = function(webpackEnv) {
       // require.resolve('webpack/hot/dev-server'),
       isEnvDevelopment &&
 <<<<<<< HEAD
+<<<<<<< HEAD
       require.resolve("react-dev-utils/webpackHotDevClient"),
+=======
+        require.resolve("react-dev-utils/webpackHotDevClient"),
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
 =======
         require.resolve("react-dev-utils/webpackHotDevClient"),
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
@@ -238,6 +261,9 @@ module.exports = function(webpackEnv) {
       chunkFilename: isEnvProduction
         ? "static/js/[name].[contenthash:8].chunk.js"
         : isEnvDevelopment && "static/js/[name].chunk.js",
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
       // We inferred the "public path" (such as / or /my-project) from homepage.
       // We use "/" in development.
@@ -259,6 +285,9 @@ module.exports = function(webpackEnv) {
               .replace(/\\/g, "/")
         : isEnvDevelopment &&
           (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, "/")),
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
       // Prevents conflicts when multiple Webpack runtimes (from different apps)
       // are used on the same page.
@@ -344,6 +373,9 @@ module.exports = function(webpackEnv) {
                   annotation: true
                 }
               : false
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
           }
         })
@@ -425,6 +457,7 @@ module.exports = function(webpackEnv) {
           test: /\.(js|mjs|jsx|ts|tsx)$/,
           enforce: "pre",
 <<<<<<< HEAD
+<<<<<<< HEAD
           use: [{
             options: {
               cache: true,
@@ -435,6 +468,8 @@ module.exports = function(webpackEnv) {
             loader: require.resolve("eslint-loader")
           }],
 =======
+=======
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
           use: [
             {
               options: {
@@ -446,6 +481,9 @@ module.exports = function(webpackEnv) {
               loader: require.resolve("eslint-loader")
             }
           ],
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
           include: paths.appSrc
         },
@@ -487,6 +525,9 @@ module.exports = function(webpackEnv) {
 =======
                           ReactComponent:
                             "@svgr/webpack?-svgo,+titleProp,+ref![path]"
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
                         }
                       }
@@ -516,9 +557,13 @@ module.exports = function(webpackEnv) {
                   [
                     require.resolve("babel-preset-react-app/dependencies"),
 <<<<<<< HEAD
+<<<<<<< HEAD
                     {
                       helpers: true
                     }
+=======
+                    { helpers: true }
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
 =======
                     { helpers: true }
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
@@ -566,7 +611,10 @@ module.exports = function(webpackEnv) {
                 getLocalIdent: getCSSModuleLocalIdent
               })
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
             },
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the
@@ -600,6 +648,9 @@ module.exports = function(webpackEnv) {
                 },
                 "sass-loader"
               )
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
@@ -837,6 +888,9 @@ module.exports = function(webpackEnv) {
           // The formatter is invoked directly in WebpackDevServerUtils during development
           formatter: isEnvProduction ? typescriptFormatter : undefined
         })
+<<<<<<< HEAD
+>>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
+=======
 >>>>>>> 55d24ebcf1dd41304bb7b4061e50f60ae4717110
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
