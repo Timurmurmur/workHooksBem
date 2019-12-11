@@ -17,18 +17,18 @@ export const Auth: React.FC<AuthProps> = ({ login, pageStatus }) => {
   const [password, setPassword] = useState("");
 
   const handleEmailChangeCallback = useCallback(
-    (e: MouseEvent) => {
+    (e: any) => {
       if (e.target) {
-        setEmail((e.target as HTMLInputElement).value);
+        setEmail(e.target.value);
       }
     },
     [email]
   );
 
   const handlePasswordChangeCallback = useCallback(
-    (e: MouseEvent) => {
+    (e: any) => {
       if (e.target) {
-        setPassword((e.target as HTMLInputElement).value);
+        setPassword(e.target.value);
       }
     },
     [password]

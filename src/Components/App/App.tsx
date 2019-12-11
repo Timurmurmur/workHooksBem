@@ -110,11 +110,6 @@ export const App: React.FC = () => {
               <Count />
             </AppHeader>
           </Fragment>
-          <Fragment forRoute="/new-count/:type">
-            <AppHeader>
-              <NewCount />
-            </AppHeader>
-          </Fragment>
           <Fragment forRoute="/tasks">
             <AppHeader>
               <Tasks />
@@ -123,16 +118,6 @@ export const App: React.FC = () => {
           <Fragment forRoute="/partners">
             <AppHeader>
               <Partners />
-            </AppHeader>
-          </Fragment>
-          <Fragment forRoute="/new-partner">
-            <AppHeader>
-              <NewPartner />
-            </AppHeader>
-          </Fragment>
-          <Fragment forRoute="/new-task">
-            <AppHeader>
-              <NewTasks />
             </AppHeader>
           </Fragment>
           <Fragment forRoute="/organization">
@@ -145,10 +130,23 @@ export const App: React.FC = () => {
               <Goods />
             </AppHeader>
           </Fragment>
-          <Fragment forRoute="/new-goods">
-            <AppHeader>
-              <NewGoods />
-            </AppHeader>
+          <Fragment forRoute="/new">
+            <div>
+              <AppHeader>
+                <Fragment forRoute="/count/:type">
+                  <NewCount />
+                </Fragment>
+                <Fragment forRoute="/new/partner">
+                  <NewPartner />
+                </Fragment>
+                <Fragment forRoute="/new/task">
+                  <NewTasks />
+                </Fragment>
+                <Fragment forRoute="/new/goods">
+                  <NewGoods />
+                </Fragment>
+              </AppHeader>
+            </div>
           </Fragment>
         </div>
       </Fragment>

@@ -19,14 +19,14 @@ export enum RoutesPath {
   login = "/auth/login",
   reg = "/auth/reg",
   count = "/count/:type",
-  newCount = "/new-count/:type",
-  newPartner = "/new-partner",
-  newTask = "/new-task",
+  newCount = "/new/count/:type",
+  newPartner = "/new/partner",
+  newTask = "/new/task",
+  newGoods = "/new/goods",
   tasks = "/tasks",
   partners = "/partners",
   organization = "/organization",
-  goods = "/goods",
-  newGoods = "/new-goods"
+  goods = "/goods"
 }
 
 const routes = {

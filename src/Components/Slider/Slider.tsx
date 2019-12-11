@@ -27,7 +27,7 @@ export const Slider = (props: SliderProps) => {
                 <div
                   onClick={changeImage}
                   className="button button_comp_slider"
-                  id={index}
+                  id={`${index}`}
                 ></div>
               </>
             );
