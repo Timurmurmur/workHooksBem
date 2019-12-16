@@ -26,7 +26,11 @@ export enum RoutesPath {
   tasks = "/tasks",
   partners = "/partners",
   organization = "/organization",
-  goods = "/goods"
+  goods = "/goods",
+  currentPartner = "/current/partner",
+  currentTask = "/current/task",
+  valute = "/valute",
+  profile = "/profile"
 }
 
 const routes = {
@@ -68,8 +72,21 @@ const routes = {
   },
   [RoutesPath.newGoods]: {
     title: "Новый товар"
+  },
+  [RoutesPath.currentPartner]: {
+    title: "Партнер"
+  },
+  [RoutesPath.currentTask]: {
+    title: "Задачи"
+  },
+  [RoutesPath.valute]: {
+    title: "Валюта"
+  },
+  [RoutesPath.profile]: {
+    title: "Профиль пользователя"
   }
 };
+
 export const routesMiddleware: Middleware<State, State, Dispatch<Action>> = (
   store: MiddlewareAPI<Dispatch<Action>>
 ): ((next: Dispatch<Action>) => (action: Action) => Action) => (

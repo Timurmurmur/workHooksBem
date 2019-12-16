@@ -50,6 +50,10 @@ import { Organization } from "../Organization/Organizations";
 import { Goods } from "../Goods/Goods";
 import { NewGoods } from "../NewGoods/NewGoods";
 import { isLogged } from "./isLogged";
+import { CurrentPartner } from "../CurrentPartner/CurrentPartner";
+import { CurrentTask } from "../CurrentTask/CurrentTask";
+import { Valute } from "../Valute/Valute";
+import { Profile } from "../Profile/Profile";
 
 export type Action = MainAction | AuthAction | RouterActions;
 // smirnovvad7@gmail.com
@@ -105,6 +109,11 @@ export const App: React.FC = () => {
               <MainContainer />
             </AppHeader>
           </Fragment>
+          <Fragment forRoute="/valute">
+            <AppHeader>
+              <Valute />
+            </AppHeader>
+          </Fragment>
           <Fragment forRoute="/count/:type">
             <AppHeader>
               <Count />
@@ -130,23 +139,38 @@ export const App: React.FC = () => {
               <Goods />
             </AppHeader>
           </Fragment>
+          <Fragment forRoute="/profile">
+            <AppHeader>
+              <Profile />
+            </AppHeader>
+          </Fragment>
           <Fragment forRoute="/new">
             <div>
               <AppHeader>
                 <Fragment forRoute="/count/:type">
                   <NewCount />
                 </Fragment>
-                <Fragment forRoute="/new/partner">
+                <Fragment forRoute="/partner">
                   <NewPartner />
                 </Fragment>
-                <Fragment forRoute="/new/task">
+                <Fragment forRoute="/task">
                   <NewTasks />
                 </Fragment>
-                <Fragment forRoute="/new/goods">
+                <Fragment forRoute="/goods">
                   <NewGoods />
                 </Fragment>
               </AppHeader>
             </div>
+          </Fragment>
+          <Fragment forRoute="/current">
+            <AppHeader>
+              <Fragment forRoute="/partner">
+                <CurrentPartner />
+              </Fragment>
+              <Fragment forRoute="/task">
+                <CurrentTask />
+              </Fragment>
+            </AppHeader>
           </Fragment>
         </div>
       </Fragment>

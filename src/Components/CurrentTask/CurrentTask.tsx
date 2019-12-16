@@ -1,11 +1,11 @@
 import React from "react";
-import "./CurrentTaks.css";
-import user_photo from "../../assets/images/user-photo.png";
+import "./CurrentTask.css";
 import { Container } from "../Container/Container";
 import { Link } from "../Link/Link";
 import Comments from "./Comments";
 import TaskChangesHistory from "./TaskChangesHistory";
 import { Button } from "../Button/Button";
+import { Img, ShapeType } from "../Img/Img";
 
 interface IState {
   history: boolean;
@@ -239,7 +239,13 @@ export class CurrentTask extends React.Component<any, IState> {
                 </tr>
                 <tr className="task-stat__user-info">
                   <div className="task-stat__user-img">
-                    <img src={user_photo} alt="" />
+                    <Img
+                      src={ShapeType.user_photo}
+                      comp="user-img"
+                      alt=""
+                      width={40}
+                      height={40}
+                    />
                   </div>
                   <div className="task-stat__user-descr">
                     <p>Иванов Иван</p>
@@ -256,7 +262,13 @@ export class CurrentTask extends React.Component<any, IState> {
                 </tr>
                 <tr className="task-stat__user-info">
                   <div className="task-stat__user-img">
-                    <img src={user_photo} alt="" />
+                    <Img
+                      src={ShapeType.user_photo}
+                      comp="user-img"
+                      alt=""
+                      width={40}
+                      height={40}
+                    />
                   </div>
                   <div className="task-stat__user-descr">
                     <p>Сидоров Олег</p>

@@ -1,0 +1,39 @@
+.container_comp_valute {
+  display: flex;
+}
+
+.wrapper_comp_valute {
+  position: relative;
+  font-size: 14px;
+  padding: 20px;
+  box-shadow: 1px 1px 6px 1px var(--shadow-sixty);
+}
+
+.valute__title span:first-child {
+  color: var(--auth-color-blue);
+  font-weight: bold;
+}
+
+.valute__title span:last-child {
+  font-size: 12px;
+  margin-left: 13px;
+}
+
+.valute__category {
+  font-size: 12px;
+  margin: 10px 0;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.valute__course {
+  display: flex;
+  font-size: 12px;
+}
+
+.valute__course span:first-child {
+  font-weight: bold;
+}
+
+.valute__course span:last-child {
+  margin-left: 50px;
+}

@@ -7,7 +7,7 @@ import "./Link.css";
 export interface ILinkProps extends IClassNameProps {
   as?: ReactType;
   comp: string;
-  href: string;
+  href?: string;
   color?: string;
   size: string;
   checked?: boolean;

@@ -74,6 +74,14 @@ export const Partners: React.FC = () => {
       </Container>
       <div className="container container_comp_partners wrapper wrapper_comp_card">
         <div className="wrapper wrapper_comp_partners">
+          <div className="countCard__options">
+            <div className="countCard__pen">
+              <i className="fas fa-pencil-alt"></i>
+            </div>
+            <div className="countCard__trash">
+              <i className="fas fa-trash-alt"></i>
+            </div>
+          </div>
           <div className="partners__title">
             <span>Рога и Копыта, ООО</span>
             <img src={logo} alt="" />

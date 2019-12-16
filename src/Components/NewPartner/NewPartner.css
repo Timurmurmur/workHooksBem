@@ -1,38 +1,51 @@
+a {
+  cursor: pointer;
+}
+
 .wrapper.wrapper_comp_newPartner {
   max-width: 1100px;
 }
+
 .newPartner__input {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
+
 .newPartner__input span {
   font-size: 14px;
 }
+
 .input.input_comp_newPartner {
   width: 760px;
 }
+
 .select.select_comp_newPartner {
   width: 760px;
 }
+
 .select.select_comp_newPartner {
   color: #000;
 }
+
 .newPartner__radio {
   width: 285px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .newPartner__radio input[type="radio"] {
   display: none;
 }
+
 .newPartner__radio label {
   font-size: 14px;
   position: relative;
   margin-left: 20px;
 }
+
 .newPartner__radio label::before {
   content: "";
   border: 1px solid #000;
@@ -42,6 +55,7 @@
   left: -20px;
   border-radius: 2px;
 }
+
 .newPartner__radio input[type="radio"]:checked + label::after {
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
@@ -52,19 +66,23 @@
   left: -20px;
   top: -2px;
 }
+
 .newPartner__footer {
   margin-top: 20px;
   display: flex;
   align-items: flex-end;
   margin-bottom: 40px;
 }
+
 .newPartner__footer .newPartner__input {
   display: flex;
   margin-bottom: 0;
 }
+
 .newPartner__footer .newPartner__input span {
   margin-right: 30px;
 }
+
 .newPartner__footer .newPartner__input .input.input_comp_newPartner {
   width: 240px;
 }
@@ -78,13 +96,16 @@
   justify-content: center;
   align-items: center;
 }
+
 .button.button_comp_newPartner span i {
   font-size: 16px;
   font-weight: bold;
 }
+
 .wrapper.wrapper_comp_card.container_comp_newPartner {
   padding-top: 10px;
 }
+
 .table.table_comp_newPartner {
   width: 1300px;
   border-spacing: 0 10px;
@@ -96,23 +117,29 @@
   justify-content: space-between;
   padding-bottom: 15px;
 }
+
 .table.table_comp_newPartner tr th input {
   width: 381px;
 }
+
 .table.table_comp_newPartner tr th {
   display: flex;
   justify-content: space-between;
 }
+
 .table.table_comp_newPartner tr th span {
   font-weight: normal;
   font-size: 14px;
 }
+
 .table.table_comp_newPartner .tableLine.tableLine_size_small {
   width: 600px;
 }
+
 .table.table_comp_newPartner .tableLine.tableLine_size_big {
   width: 100%;
 }
+
 .table.table_comp_newPartner
   .tableLine.tableLine_size_big
   .input.input_size_big {
@@ -130,33 +157,40 @@
   border-collapse: separate;
   table-layout: fixed;
   box-sizing: border-box;
-  margin-bottom: 80px;
 }
+
 .table.table_comp_bankRequez tr {
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
 }
+
 .table.table_comp_bankRequez tr th {
   display: flex;
   justify-content: space-between;
 }
+
 .table.table_comp_bankRequez tr th:first-child {
   width: 30%;
 }
+
 .table.table_comp_bankRequez tr th:last-child {
   width: 70%;
 }
+
 .table.table_comp_bankRequez tr th span {
   font-weight: normal;
   font-size: 14px;
 }
+
 .table.table_comp_bankRequez tr th input {
   width: 100%;
 }
+
 .table.table_comp_bankRequez tr th select {
   width: 70px;
 }
+
 .table.table_comp_bankRequez tr th .input_size_small {
   width: 212px;
 }

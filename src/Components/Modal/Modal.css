@@ -1,0 +1,87 @@
+.container.container_comp_modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(49, 52, 54, 0.4);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper.wrapper_comp_modal {
+  position: relative;
+  box-sizing: border-box;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.modal__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.table_comp_modal {
+  width: 400px;
+  border-spacing: 0px 15px;
+}
+
+.table_comp_modal tbody tr th {
+  font-weight: normal;
+  text-align: left;
+  font-size: 14px;
+}
+
+.input_comp_modal {
+  width: 135px;
+}
+
+.input_comp_modal.input_size_small {
+  width: 64px;
+  margin-left: 20px;
+  margin-right: 12px;
+}
+
+.checkbox_comp_modal label {
+  color: #000;
+}
+
+.checkbox_comp_modal label::before {
+  left: -21px;
+  top: 2px;
+}
+
+.wrapper_comp_modal .table_comp_modal .button_comp_modal {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+}
+
+.wrapper_comp_modal .table_comp_modal .button_comp_modal span {
+  font-size: 11px;
+}
+
+.modal__options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.button_comp_modal.button_size_normall {
+  border-radius: 5px;
+  width: 45%;
+}
+
+.modal__close {
+  position: absolute;
+  top: -35px;
+  right: 0;
+  color: #be4834;
+  width: 20px;
+  height: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}

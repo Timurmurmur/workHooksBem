@@ -59,6 +59,14 @@ export const Goods: React.FC = () => {
       </Container>
       <div className="container container_comp_partners wrapper wrapper_comp_card">
         <div className="wrapper wrapper_comp_goods">
+          <div className="countCard__options">
+            <div className="countCard__pen">
+              <i className="fas fa-pencil-alt"></i>
+            </div>
+            <div className="countCard__trash">
+              <i className="fas fa-trash-alt"></i>
+            </div>
+          </div>
           <Slider
             imgArray={[
               "https://sun9-29.userapi.com/c855528/v855528394/169b07/YTJwYyOL27Q.jpg",

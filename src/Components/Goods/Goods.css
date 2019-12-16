@@ -3,6 +3,7 @@
   max-width: 350px;
   box-sizing: border-box;
   padding-bottom: 30px;
+  position: relative;
 }
 
 .goods__info {

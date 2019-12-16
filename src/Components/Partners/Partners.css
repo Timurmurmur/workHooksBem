@@ -3,6 +3,10 @@
   padding-bottom: 40px;
 }
 
+.container_comp_partners .wrapper_comp_partners {
+  margin-top: 20px;
+}
+
 .wrapper.wrapper_comp_partners {
   background-color: #fff;
   box-shadow: 1px 1px 6px 1px var(--shadow-sixty);
